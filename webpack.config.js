@@ -22,16 +22,34 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                          mozjpeg: {
-                            progressive: true,
-                            quality: 65
-                          },
-                          pngquant: {
-                            quality: '65-90',
-                            speed: 4
-                          }
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            }
                         }
-                      }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.(csv|tsv)$/,
+                use: [
+                    'csv-loader'
+                ]
+            },
+            {
+                test: /\.xml$/,
+                use: [
+                    'xml-loader'
                 ]
             }
         ]
